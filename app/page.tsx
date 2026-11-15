@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <>
       <header className="nav">
-        <a href="#top" className="logo">{site.name}<span>.</span></a>
+        <a href="#top" className="logo">
+          {site.name}
+          <span>.</span>
+        </a>
         <nav>
           <a href="#work">Work</a>
           <a href="#about">About</a>
@@ -17,14 +20,19 @@ export default function Home() {
         <section className="hero">
           <p className="eyebrow">{site.title}</p>
           <h1>
-            Hi, I'm <em>{site.name}</em>.<br />
-            I build things<br />
+            Hi, I&apos;m <em>{site.name}</em>.<br />
+            I build things
+            <br />
             that <mark>ship</mark>.
           </h1>
           <p className="lede">{site.tagline}</p>
           <div className="cta">
-            <a className="btn btn-primary" href="#work">See my work</a>
-            <a className="btn btn-ghost" href={site.resume}>Resume ↓</a>
+            <a className="btn btn-primary" href="#work">
+              See my work
+            </a>
+            <a className="btn btn-ghost" href={site.resume}>
+              Resume ↓
+            </a>
           </div>
         </section>
 
@@ -36,7 +44,9 @@ export default function Home() {
                 <h3>{p.title}</h3>
                 <p>{p.blurb}</p>
                 <ul className="tags">
-                  {p.stack.map((s) => <li key={s}>{s}</li>)}
+                  {p.stack.map((s) => (
+                    <li key={s}>{s}</li>
+                  ))}
                 </ul>
                 <div className="links">
                   {p.live && <a href={p.live}>Live ↗</a>}
@@ -48,7 +58,9 @@ export default function Home() {
               <article className="card soon">
                 <h3>Next project</h3>
                 <p>Currently building something new. Check back soon, or follow along on GitHub.</p>
-                <div className="links"><a href={site.github}>GitHub ↗</a></div>
+                <div className="links">
+                  <a href={site.github}>GitHub ↗</a>
+                </div>
               </article>
             )}
           </div>
@@ -60,7 +72,11 @@ export default function Home() {
             {skills.map((g) => (
               <div key={g.group}>
                 <h4>{g.group}</h4>
-                <ul>{g.items.map((i) => <li key={i}>{i}</li>)}</ul>
+                <ul>
+                  {g.items.map((i) => (
+                    <li key={i}>{i}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -68,20 +84,32 @@ export default function Home() {
 
         <section id="about" className="section about">
           <h2>About</h2>
-          <div>{site.about.map((t, i) => <p key={i}>{t}</p>)}</div>
+          <div>
+            {site.about.map((t, i) => (
+              <p key={i}>{t}</p>
+            ))}
+          </div>
         </section>
 
         <section id="contact" className="section contact">
-          <h2>Let's talk.</h2>
-          <a className="mail" href={`mailto:${site.email}`}>{site.email}</a>
+          <h2>Let&apos;s talk.</h2>
+          <a className="mail" href={`mailto:${site.email}`}>
+            {site.email}
+          </a>
           <div className="cta">
-            <a className="btn btn-primary" href={site.github}>GitHub</a>
-            <a className="btn btn-ghost" href={site.linkedin}>LinkedIn</a>
+            <a className="btn btn-primary" href={site.github}>
+              GitHub
+            </a>
+            <a className="btn btn-ghost" href={site.linkedin}>
+              LinkedIn
+            </a>
           </div>
         </section>
       </main>
 
-      <footer className="footer">© {new Date().getFullYear()} {site.name} · {site.location}</footer>
+      <footer className="footer">
+        © {new Date().getFullYear()} {site.name} · {site.location}
+      </footer>
     </>
   );
 }
