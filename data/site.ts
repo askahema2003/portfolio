@@ -1,5 +1,32 @@
 // ✏️ EDIT THIS FILE: it is the only place you need to change content.
-export const site = {
+
+export interface Site {
+  name: string;
+  title: string;
+  tagline: string;
+  location: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  resume: string;
+  about: string[];
+}
+
+export interface SkillGroup {
+  group: string;
+  items: string[];
+}
+
+export interface Project {
+  title: string;
+  blurb: string;
+  stack: string[];
+  live?: string;
+  code?: string;
+  color: string;
+}
+
+export const site: Site = {
   name: "Ibrahim",
   title: "Software engineering student",
   tagline: "Full-stack apps today, machine learning next.",
@@ -15,7 +42,7 @@ export const site = {
   ],
 };
 
-export const skills = [
+export const skills: SkillGroup[] = [
   { group: "Frontend", items: ["React", "Next.js", "JavaScript", "CSS"] },
   { group: "Backend", items: ["Flask", "Python", "PostgreSQL", "REST APIs"] },
   { group: "Tools", items: ["Git", "GitHub", "Linux", "Vercel"] },
@@ -23,7 +50,7 @@ export const skills = [
 
 // ✏️ Add a new project by copying one block below and pasting it after the last one.
 // Colors rotate through: "#ffe500" (yellow), "#00e5a8" (mint), "#ff4fa3" (pink).
-export const projects = [
+export const projects: Project[] = [
   {
     title: "Avian Species Directory & River Monitoring",
     blurb:

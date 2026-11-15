@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { site, skills, projects, showComingSoon } from "@/data/site";
 
 export default function Home() {
@@ -31,7 +32,7 @@ export default function Home() {
           <h2>Selected work</h2>
           <div className="grid">
             {projects.map((p) => (
-              <article key={p.title} className="card" style={{ "--c": p.color }}>
+              <article key={p.title} className="card" style={{ "--c": p.color } as CSSProperties}>
                 <h3>{p.title}</h3>
                 <p>{p.blurb}</p>
                 <ul className="tags">
