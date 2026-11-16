@@ -34,7 +34,7 @@ export const site: Site = {
   email: "alkassasibrahem@gmail.com",
   github: "https://github.com/askahema2003",
   linkedin: "https://www.linkedin.com/in/ibrahim-alqassass/",
-  resume: "/Ibrahim_Alqassass_General.pdf",
+  resume: "/Ibrahim_Alqassass_Resume.pdf",
   about: [
     "I'm a Computer Science student at Susquehanna University, and I'm happiest when I'm building something that works from the database all the way to the screen. Right now that's a full-stack platform for a university research project, turning river and bird data into something people can actually explore.",
     "I also help teach Python to 20 students as a teaching assistant, which keeps me honest about whether my own code makes sense to someone else.",
