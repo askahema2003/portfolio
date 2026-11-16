@@ -28,7 +28,7 @@ export interface Project {
 
 export const site: Site = {
   name: "Ibrahim",
-  url: "https://your-domain.me", // replace with your real site address once it is live
+  url: "https://alqassass.me",// replace with your real site address once it is live
   title: "Computer Science student",
   tagline: "Full-stack developer learning to build machine learning into real products.",
   email: "alkassasibrahem@gmail.com",
