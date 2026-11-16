@@ -1,6 +1,9 @@
 import type { CSSProperties } from "react";
 import { site, skills, projects, showComingSoon } from "@/data/site";
 
+// Open external links in a new tab. rel prevents the new page from controlling this one.
+const external = { target: "_blank", rel: "noopener noreferrer" } as const;
+
 export default function Home() {
   return (
     <>
@@ -20,17 +23,16 @@ export default function Home() {
         <section className="hero">
           <p className="eyebrow">{site.title}</p>
           <h1>
-            Hi, I&apos;m <em>{site.name}</em>.<br />
-            I build things
+            Hi, I&apos;m <em>{site.name}</em>.<br />I turn <mark>data</mark> into
             <br />
-            that <mark>ship</mark>.
+            full-stack apps.
           </h1>
           <p className="lede">{site.tagline}</p>
           <div className="cta">
             <a className="btn btn-primary" href="#work">
               See my work
             </a>
-            <a className="btn btn-ghost" href={site.resume}>
+            <a className="btn btn-ghost" href={site.resume} {...external}>
               Resume ↓
             </a>
           </div>
@@ -49,8 +51,16 @@ export default function Home() {
                   ))}
                 </ul>
                 <div className="links">
-                  {p.live && <a href={p.live}>Live ↗</a>}
-                  {p.code && <a href={p.code}>Code ↗</a>}
+                  {p.live && (
+                    <a href={p.live} {...external}>
+                      Live ↗
+                    </a>
+                  )}
+                  {p.code && (
+                    <a href={p.code} {...external}>
+                      Code ↗
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
@@ -59,7 +69,9 @@ export default function Home() {
                 <h3>Next project</h3>
                 <p>Currently building something new. Check back soon, or follow along on GitHub.</p>
                 <div className="links">
-                  <a href={site.github}>GitHub ↗</a>
+                  <a href={site.github} {...external}>
+                    GitHub ↗
+                  </a>
                 </div>
               </article>
             )}
@@ -97,10 +109,10 @@ export default function Home() {
             {site.email}
           </a>
           <div className="cta">
-            <a className="btn btn-primary" href={site.github}>
+            <a className="btn btn-primary" href={site.github} {...external}>
               GitHub
             </a>
-            <a className="btn btn-ghost" href={site.linkedin}>
+            <a className="btn btn-ghost" href={site.linkedin} {...external}>
               LinkedIn
             </a>
           </div>
@@ -108,7 +120,7 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        © {new Date().getFullYear()} {site.name} · {site.location}
+        © {new Date().getFullYear()} {site.name}
       </footer>
     </>
   );
